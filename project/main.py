@@ -6,12 +6,11 @@ import os.path
 
 main = Blueprint('main', __name__)
 
-PEOPLE_FOLDER = os.path.join('static')
 
-@main.route('/')
+
+@main.route('/', methods=['GET', 'POST'])
 def index():
-    full_filename = os.path.join(PEOPLE_FOLDER, 'pic.jpg')
-    return render_template("welcome.html", pic= full_filename)
+    return render_template("welcome.html")
 
 
 
